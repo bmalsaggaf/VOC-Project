@@ -14,7 +14,7 @@ export const submitOrder = createServerFn({ method: "POST" })
     };
   })
   .handler(async ({ data }) => {
-    const url = process.env.N8N_WEBHOOK_URL;
+    const url = process.env["N8N_WEBHOOK_URL"];
     if (!url) throw new Error("webhook_not_configured");
     const orderId = crypto.randomUUID();
     const res = await fetch(url, {

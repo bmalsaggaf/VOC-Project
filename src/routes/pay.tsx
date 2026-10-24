@@ -3,7 +3,7 @@ import { Page } from "@/components/site";
 import { useLang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/pay")({
-  validateSearch: (s: Record<string, unknown>) => ({ id: typeof s.id === "string" ? s.id : "" }),
+  validateSearch: (s: Record<string, unknown>) => ({ id: typeof s["id"] === "string" ? s["id"] : "" }),
   head: () => ({
     meta: [
       { title: "الدفع | Payment — صوت العميل" },
