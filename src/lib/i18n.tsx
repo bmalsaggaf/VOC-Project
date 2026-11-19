@@ -7,8 +7,9 @@ export const dict = {
     brand: "صوت العميل",
     tagline: "اعرف ماذا يقول عملاؤك فعلاً",
     cta: "احصل على تقريرك",
-    heroTitle: "حوّل تقييمات قوقل إلى خطوات واضحة",
-    heroSub: "الصق رابط مقهاك أو مطعمك على خرائط قوقل، ويحلل الذكاء الاصطناعي تقييمات عملائك ليخبرك بما يحبونه وما يزعجهم وما تصلحه أولاً.",
+    heroTitle: "اسمع ما يقوله عملاؤك في قوقل ماب",
+    heroSub:
+      "الصق رابط مقهاك أو مطعمك على خرائط قوقل، ويحلل الذكاء الاصطناعي تقييمات عملائك ليخبرك بما يحبونه وما يزعجهم وما تصلحه أولاً.",
     form: {
       link: "رابط خرائط قوقل",
       linkPh: "https://maps.app.goo.gl/...",
@@ -23,9 +24,19 @@ export const dict = {
       errEmail: "أدخل بريداً إلكترونياً صحيحاً",
       errLang: "اختر لغة التقرير",
       errServer: "تعذّر إرسال طلبك. حاول مرة أخرى بعد قليل.",
-      note: "دفع آمن · تقرير واحد لكل عملية شراء",
+      note: "دفع آمن. تقرير واحد لكل عملية شراء.",
     },
-    howTitle: "كيف يعمل؟",
+    bubblesLabel: "أمثلة من تقييمات العملاء وخلاصة التقرير",
+    bubbles: [
+      "«القهوة تحفة، والجلسة هادية»",
+      "«الموظفين لطيفين بس الطلب تأخر»",
+      "«زحمة وقت المغرب، انتظرنا ٢٠ دقيقة»",
+      "«أفضل قهوة مختصة جربتها في الرياض»",
+    ],
+    summaryTitle: "مثال: الخلاصة من ١٬٢٤٨ تقييماً",
+    summaryBody:
+      "الناس تحب قهوتكم، لكن الانتظار وقت الذروة هو أكبر شكوى. ابدأ بباريستا إضافي من ٤ إلى ٨ مساءً.",
+    howTitle: "من رابط إلى تقرير في ثلاث خطوات",
     steps: [
       ["الصق رابطك", "انسخ رابط نشاطك من خرائط قوقل والصقه في النموذج."],
       ["ادفع بأمان", "أكمل الدفع عبر بوابة آمنة وموثوقة."],
@@ -34,7 +45,8 @@ export const dict = {
     sampleTitle: "نموذج من التقرير",
     sampleSub: "مثال لما ستحصل عليه",
     sample: {
-      shop: "مقهى الرمال · الرياض",
+      shop: "مقهى الرمال، الرياض",
+      badge: "مثال توضيحي",
       score: "مؤشر رضا العملاء",
       reviews: "تقييم تم تحليله",
       praised: "أكثر ما يُمدح",
@@ -62,13 +74,24 @@ export const dict = {
     price: "99",
     currency: "ر.س",
     per: "لكل تقرير",
-    planFeatures: ["تحليل حتى آخر التقييمات المتاحة", "تقرير مفصّل خلال دقائق", "رابط خاص لمشاهدة التقرير", "دفعة واحدة بدون اشتراك"],
+    planFeatures: [
+      "تحليل حتى آخر التقييمات المتاحة",
+      "تقرير مفصّل خلال دقائق",
+      "رابط خاص لمشاهدة التقرير",
+      "دفعة واحدة بدون اشتراك",
+    ],
     faqTitle: "الأسئلة الشائعة",
     faq: [
-      ["كيف تعمل الخدمة؟", "تلصق رابط نشاطك من خرائط قوقل، ثم نجمع التقييمات العامة ونحللها بالذكاء الاصطناعي ونرسل لك تقريراً واضحاً."],
+      [
+        "كيف تعمل الخدمة؟",
+        "تلصق رابط نشاطك من خرائط قوقل، ثم نجمع التقييمات العامة ونحللها بالذكاء الاصطناعي ونرسل لك تقريراً واضحاً.",
+      ],
       ["كم يستغرق التقرير؟", "عادةً بضع دقائق بعد إتمام الدفع، حسب عدد التقييمات."],
       ["هل بياناتي آمنة؟", "نستخدم التقييمات العامة فقط، ولا نشارك بريدك أو بياناتك مع أي طرف."],
-      ["ما الأنشطة المدعومة؟", "المقاهي والمطاعم بشكل أساسي، وأي نشاط لديه تقييمات على خرائط قوقل."],
+      [
+        "ما الأنشطة المدعومة؟",
+        "المقاهي والمطاعم بشكل أساسي، وأي نشاط لديه تقييمات على خرائط قوقل.",
+      ],
       ["هل يمكن استرداد المبلغ؟", "إذا لم نتمكن من إعداد تقريرك لأي سبب، نعيد لك المبلغ كاملاً."],
     ],
     footer: { privacy: "سياسة الخصوصية", terms: "الشروط والأحكام", rights: "جميع الحقوق محفوظة" },
@@ -80,7 +103,8 @@ export const dict = {
     },
     report: {
       preparing: "جارٍ إعداد تقريرك",
-      preparingSub: "نحلل تقييمات عملائك الآن. ستصلك رسالة على بريدك عند الانتهاء، ويمكنك إبقاء هذه الصفحة مفتوحة.",
+      preparingSub:
+        "نحلل تقييمات عملائك الآن. ستصلك رسالة على بريدك عند الانتهاء، ويمكنك إبقاء هذه الصفحة مفتوحة.",
       steps: ["جمع التقييمات", "تحليل المشاعر", "استخراج التوصيات"],
       ready: "تقريرك جاهز",
     },
@@ -90,8 +114,9 @@ export const dict = {
     brand: "Voice of the Customer",
     tagline: "Know what your customers really say",
     cta: "Get My Report",
-    heroTitle: "Turn Google reviews into clear actions",
-    heroSub: "Paste your coffee shop or restaurant's Google Maps link. Our AI reads every review and tells you what customers love, what bothers them, and what to fix first.",
+    heroTitle: "Hear what your customers say on Google Maps",
+    heroSub:
+      "Paste your coffee shop or restaurant's Google Maps link. Our AI reads every review and tells you what customers love, what bothers them, and what to fix first.",
     form: {
       link: "Google Maps link",
       linkPh: "https://maps.app.goo.gl/...",
@@ -106,18 +131,32 @@ export const dict = {
       errEmail: "Enter a valid email address",
       errLang: "Choose a report language",
       errServer: "We couldn't send your order. Please try again shortly.",
-      note: "Secure payment · One report per purchase",
+      note: "Secure payment. One report per purchase.",
     },
-    howTitle: "How it works",
+    bubblesLabel: "Example customer reviews and the report summary",
+    bubbles: [
+      "“Amazing coffee, calm place”",
+      "“Friendly staff, but our order was late”",
+      "“Packed after sunset, we waited 20 minutes”",
+      "“Best specialty coffee I’ve had in Riyadh”",
+    ],
+    summaryTitle: "Example: the takeaway from 1,248 reviews",
+    summaryBody:
+      "People love your coffee, but peak-hour waits are the biggest complaint. Start with one extra barista from 4 to 8 PM.",
+    howTitle: "From link to report in three steps",
     steps: [
       ["Paste your link", "Copy your business link from Google Maps and paste it in the form."],
       ["Pay securely", "Complete checkout through a trusted, secure gateway."],
-      ["Get your report in minutes", "A detailed report lands in your inbox and on a private page."],
+      [
+        "Get your report in minutes",
+        "A detailed report lands in your inbox and on a private page.",
+      ],
     ],
     sampleTitle: "Sample report",
     sampleSub: "A preview of what you'll get",
     sample: {
-      shop: "Al Rimal Café · Riyadh",
+      shop: "Al Rimal Café, Riyadh",
+      badge: "Sample",
       score: "Customer sentiment score",
       reviews: "reviews analyzed",
       praised: "Top praised",
@@ -145,14 +184,34 @@ export const dict = {
     price: "99",
     currency: "SAR",
     per: "per report",
-    planFeatures: ["Analysis of your latest available reviews", "Detailed report in minutes", "Private link to view your report", "One-time payment, no subscription"],
+    planFeatures: [
+      "Analysis of your latest available reviews",
+      "Detailed report in minutes",
+      "Private link to view your report",
+      "One-time payment, no subscription",
+    ],
     faqTitle: "FAQ",
     faq: [
-      ["How does it work?", "You paste your Google Maps link, we collect the public reviews, analyze them with AI, and send you a clear report."],
-      ["How long does it take?", "Usually a few minutes after payment, depending on the number of reviews."],
-      ["Is my data safe?", "We only use public reviews and never share your email or data with anyone."],
-      ["Which businesses are supported?", "Mainly coffee shops and restaurants, but any business with Google Maps reviews works."],
-      ["Can I get a refund?", "If we can't produce your report for any reason, you get a full refund."],
+      [
+        "How does it work?",
+        "You paste your Google Maps link, we collect the public reviews, analyze them with AI, and send you a clear report.",
+      ],
+      [
+        "How long does it take?",
+        "Usually a few minutes after payment, depending on the number of reviews.",
+      ],
+      [
+        "Is my data safe?",
+        "We only use public reviews and never share your email or data with anyone.",
+      ],
+      [
+        "Which businesses are supported?",
+        "Mainly coffee shops and restaurants, but any business with Google Maps reviews works.",
+      ],
+      [
+        "Can I get a refund?",
+        "If we can't produce your report for any reason, you get a full refund.",
+      ],
     ],
     footer: { privacy: "Privacy Policy", terms: "Terms of Service", rights: "All rights reserved" },
     pay: {
@@ -163,7 +222,8 @@ export const dict = {
     },
     report: {
       preparing: "Your report is being prepared",
-      preparingSub: "We're analyzing your customer reviews now. We'll email you when it's done — feel free to keep this page open.",
+      preparingSub:
+        "We're analyzing your customer reviews now. We'll email you when it's done — feel free to keep this page open.",
       steps: ["Collecting reviews", "Analyzing sentiment", "Writing recommendations"],
       ready: "Your report is ready",
     },

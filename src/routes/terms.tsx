@@ -16,7 +16,7 @@ export const Route = createFileRoute("/terms")({
     return (
       <Page>
         <div className="mx-auto max-w-3xl space-y-4 px-4 py-16">
-          <h1 className="text-3xl font-black">{t.footer.terms}</h1>
+          <h1 className="font-display text-5xl leading-tight">{t.footer.terms}</h1>
           <p className="text-muted-foreground">
             {lang === "ar"
               ? "كل عملية شراء تشمل تقريراً واحداً لنشاط واحد. إذا تعذّر إعداد التقرير نعيد المبلغ كاملاً."
