@@ -29,43 +29,44 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --font-display: var(--display-font);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
 }
 
 :root {
-  --app-font: "Cairo", "Inter", system-ui, sans-serif;
+  /* Design B: "Loud & Clear" — brand blue, Google-star yellow, navy ink */
+  --app-font: "Readex Pro", system-ui, sans-serif;
+  --display-font: "Lalezar", "Readex Pro", system-ui, sans-serif;
   --radius: 1rem;
-  --background: oklch(0.17 0.035 260);
-  --foreground: oklch(0.96 0.01 85);
-  --card: oklch(0.22 0.04 260);
-  --card-foreground: oklch(0.96 0.01 85);
-  --popover: oklch(0.22 0.04 260);
-  --popover-foreground: oklch(0.96 0.01 85);
-  --primary: oklch(0.8 0.13 80);
-  --primary-glow: oklch(0.88 0.12 90);
-  --primary-foreground: oklch(0.18 0.035 260);
-  --secondary: oklch(0.27 0.045 260);
-  --secondary-foreground: oklch(0.96 0.01 85);
-  --muted: oklch(0.26 0.04 260);
-  --muted-foreground: oklch(0.72 0.03 255);
-  --accent: oklch(0.3 0.05 258);
-  --accent-foreground: oklch(0.96 0.01 85);
-  --destructive: oklch(0.68 0.19 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --success: oklch(0.75 0.15 155);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.8 0.13 80);
-  --gradient-gold: linear-gradient(135deg, var(--primary), var(--primary-glow));
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.3 0.07 262) 0%, var(--background) 65%);
-  --shadow-gold: 0 12px 40px -12px color-mix(in oklab, var(--primary) 45%, transparent);
-  --shadow-card: 0 20px 50px -20px oklch(0 0 0 / 60%);
-}
-
-html[lang="en"] {
-  --app-font: "Inter", system-ui, sans-serif;
+  --background: #ffffff;
+  --foreground: #0d1546;
+  --card: #ffffff;
+  --card-foreground: #0d1546;
+  --popover: #ffffff;
+  --popover-foreground: #0d1546;
+  --primary: #2338e0;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e1e5ff;
+  --secondary: #eef0ff;
+  --secondary-foreground: #0d1546;
+  --muted: #eef0ff;
+  --muted-foreground: #4a5280;
+  --accent: #eef0ff;
+  --accent-foreground: #0d1546;
+  --highlight: #ffc83d;
+  --highlight-foreground: #0d1546;
+  --destructive: #c4283a;
+  --destructive-foreground: #ffffff;
+  --success: #1f7a4d;
+  --border: #dde1f5;
+  --input: #c3c9ea;
+  --ring: #2338e0;
+  --shadow-card: 0 30px 60px -36px rgb(13 21 70 / 50%);
 }
 
 @layer base {
@@ -79,49 +80,76 @@ html[lang="en"] {
   }
 }
 
-@utility bg-gradient-gold {
-  background-image: var(--gradient-gold);
+/* Lalezar is a display face: headings only, never body text */
+@utility font-display {
+  font-family: var(--display-font);
+  font-weight: 400;
+  letter-spacing: 0;
 }
-@utility bg-gradient-hero {
-  background-image: var(--gradient-hero);
-}
-@utility text-gradient-gold {
-  background-image: var(--gradient-gold);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-@utility shadow-gold {
-  box-shadow: var(--shadow-gold);
+@utility card-surface {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border-radius: 28px;
+  box-shadow: var(--shadow-card);
 }
 @utility shadow-card {
   box-shadow: var(--shadow-card);
 }
-@utility card-surface {
-  background-color: var(--card);
-  border: 1px solid var(--border);
-  border-radius: calc(var(--radius) + 8px);
-  box-shadow: var(--shadow-card);
+/* One orchestrated moment: hero speech bubbles pop in once on load */
+@utility animate-pop {
+  animation: pop 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
 }
 @utility animate-rise {
-  animation: rise 0.7s ease-out both;
-}
-@utility animate-float {
-  animation: float 5s ease-in-out infinite;
+  animation: rise 0.4s ease-out both;
 }
 @utility animate-progress {
   animation: progress 2.4s ease-in-out infinite;
 }
 
-@keyframes rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.94) rotate(var(--r, 0deg));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(var(--r, 0deg));
+  }
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes progress {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(250%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer base {
+  /* Navy ring reads on white, yellow halo reads on the blue hero */
+  :focus-visible {
+    outline: 3px solid var(--foreground);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px var(--highlight);
+  }
 }

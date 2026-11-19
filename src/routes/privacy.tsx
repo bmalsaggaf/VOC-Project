@@ -16,7 +16,7 @@ export const Route = createFileRoute("/privacy")({
     return (
       <Page>
         <div className="mx-auto max-w-3xl space-y-4 px-4 py-16">
-          <h1 className="text-3xl font-black">{t.footer.privacy}</h1>
+          <h1 className="font-display text-5xl leading-tight">{t.footer.privacy}</h1>
           <p className="text-muted-foreground">
             {lang === "ar"
               ? "نستخدم بريدك الإلكتروني ورابط نشاطك فقط لإعداد تقريرك وإرساله. نحلل التقييمات العامة فقط ولا نبيع بياناتك."
